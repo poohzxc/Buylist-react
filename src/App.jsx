@@ -1,5 +1,5 @@
 import './App.css';
-
+// componat app
 function App() {
   return (
     <div className="App">
@@ -8,6 +8,7 @@ function App() {
         <p>
           GitHub Codespaces <span className="heart">♥️</span> React
         </p>
+        <p>Mr.Pumipat Puengcharoen</p>
         <p className="small">
           Edit <code>src/App.jsx</code> and save to reload.
         </p>

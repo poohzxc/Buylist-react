@@ -2,12 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Hello from './Hello';
+import Counter from './Counter';
+import Buylist from './Buylist';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+{/*<Hello name="Pumipat" surname="Puengcharoen"age={22} />
+    <Hello />
+    <Hello />
+    <Counter />
+    <Counter />*/}
+    <Buylist />
   </React.StrictMode>
 );
 

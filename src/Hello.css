@@ -1,0 +1,14 @@
+.profile{
+    width: 100px;
+    border: #8a2be2 solid 3px;
+    border-radius: 60%;
+}
+h1{
+    color:#8a2be2;
+    background-color: aqua; 
+    
+}
+h1:hover{
+    color: chartreuse;
+    font-size: 50px;
+}
