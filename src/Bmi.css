@@ -1,0 +1,142 @@
+/* Bmi.module.css or Bmi.css */
+
+/* --- Main Container ---
+   ใช้ Flexbox เพื่อจัดองค์ประกอบลูกให้อยู่กึ่งกลางทั้งแนวตั้งและแนวนอน
+   และเพิ่ม transition เพื่อให้การเปลี่ยนแปลงขนาดดูนุ่มนวลขึ้น */
+.container {
+  font-family: 'Arial', 'Helvetica', sans-serif; /* เพิ่ม fallback font */
+  background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%); /* เพิ่มพื้นหลังแบบไล่ระดับสี */
+  padding: 40px; /* เพิ่ม padding ให้มีพื้นที่ว่างมากขึ้น */
+  border-radius: 15px; /* เพิ่มความโค้งของขอบ */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ดูมีมิติมากขึ้น */
+  max-width: 450px; /* ขยายความกว้างสูงสุดเล็กน้อย */
+  margin: 50px auto; /* ปรับ margin ให้สมดุล */
+  text-align: center;
+  border: 1px solid #ddd; /* เพิ่มเส้นขอบบางๆ */
+  transition: transform 0.3s ease-in-out; /* เพิ่ม animation ตอน hover */
+}
+
+.container:hover {
+  transform: scale(1.02); /* ขยาย container เล็กน้อยเมื่อนำเมาส์ไปชี้ */
+}
+
+/* --- Heading ---
+   ปรับปรุง font และ spacing ให้ดูทันสมัยขึ้น */
+h3 {
+  color: #1a2533; /* ปรับสีให้อ่านง่าย */
+  margin-bottom: 30px;
+  font-size: 2em; /* เพิ่มขนาดตัวอักษร */
+  font-weight: 600; /* ปรับความหนา */
+  border-bottom: 3px solid #3498db; /* ทำให้เส้นขีดเส้นใต้หนาขึ้น */
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+/* --- Labels ---
+   จัดตำแหน่งและปรับสีเพื่อความชัดเจน */
+label {
+  display: block;
+  margin-bottom: 10px; /* เพิ่มระยะห่าง */
+  color: #555; /* ปรับสีให้อ่อนลงเล็กน้อย */
+  font-weight: bold;
+  text-align: left; /* จัดชิดซ้ายเหมือนเดิมเพื่อความเป็นระเบียบ */
+  font-size: 1.1em;
+}
+
+/* --- Input Fields ---
+   ปรับปรุงดีไซน์ให้ดูสะอาดตาและใช้งานง่าย */
+input[type="text"] {
+  width: 100%; /* ปรับความกว้างให้เต็ม 100% */
+  padding: 15px; /* เพิ่ม padding ภายใน */
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* เพิ่มความโค้ง */
+  font-size: 1.1em;
+  box-sizing: border-box;
+  transition: all 0.3s ease; /* เพิ่ม transition สำหรับทุก property */
+}
+
+input[type="text"]:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+  transform: scale(1.01); /* ขยายเล็กน้อยเมื่อ focus */
+}
+
+/* --- Button ---
+   ปรับดีไซน์ปุ่มให้โดดเด่นและน่ากดมากขึ้น */
+button {
+  background: linear-gradient(45deg, #3498db, #2980b9); /* ไล่ระดับสีในปุ่ม */
+  color: white;
+  padding: 15px 30px; /* เพิ่มขนาด padding */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold; /* เพิ่มความหนา */
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  width: 100%; /* ทำให้ปุ่มมีความกว้างเต็ม */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background: linear-gradient(45deg, #2980b9, #3498db);
+  transform: translateY(-3px); /* ทำให้ปุ่มลอยขึ้นเมื่อ hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(0); /* เอฟเฟกต์ตอนกด */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- BMI Value Display ---
+   ทำให้ผลลัพธ์ BMI ดูเด่นชัด */
+.bmi-value {
+  font-size: 1.8em; /* เพิ่มขนาดตัวอักษร */
+  color: #2c3e50;
+  margin-top: 25px;
+  font-weight: 700; /* ทำให้หนาขึ้น */
+  padding: 15px;
+  background-color: #e9ecef; /* เพิ่มพื้นหลังเพื่อแยกส่วน */
+  border-radius: 10px;
+}
+
+/* --- Styles for BmiText component --- */
+
+/* --- Result Image ---
+   ปรับปรุงเงาและเส้นขอบให้ดูดีขึ้น */
+.bmi-result-image {
+  width: 120px;  /* เพิ่มขนาดรูปภาพ */
+  height: 120px; /* ทำให้เป็นสี่เหลี่ยมจัตุรัสก่อนทำวงกลม */
+  margin: 25px auto 0; /* จัดให้อยู่กึ่งกลางและปรับ margin */
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้ชัดขึ้น */
+  border: 4px solid white; /* เพิ่มเส้นขอบสีขาวรอบรูป */
+  object-fit: cover; /* ทำให้รูปภาพพอดีกับกรอบ */
+}
+
+/* --- Status Heading ---
+   ปรับปรุง Font และเพิ่มความโดดเด่น */
+.bmi-status-heading {
+  font-size: 2.2em; /* เพิ่มขนาดตัวอักษร */
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: bold; /* เพิ่มความหนา */
+  letter-spacing: 1.5px; /* เพิ่มระยะห่างระหว่างตัวอักษร */
+}
+
+/* --- Status Colors ---
+   สีที่กำหนดไว้เดิมชัดเจนดีแล้ว คงไว้ตามเดิม */
+.underweight {
+  color: #e67e22; /* Orange */
+}
+
+.overweight {
+  color: #e74c3c; /* Red */
+}
+
+.normal {
+  color: #27ae60; /* Green */
+}

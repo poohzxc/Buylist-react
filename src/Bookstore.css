@@ -1,0 +1,246 @@
+/* Bookstore.css (Classic/Warm Theme) */
+
+/* --- General Body & Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #fdfaf6; /* A very light, warm beige */
+  color: #4a4a4a;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* --- Header --- */
+header {
+  background: #ffffff;
+  padding: 2rem 5%;
+  text-align: center;
+  border-bottom: 2px solid #e0ddd7;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+header h1 {
+  font-family: 'Lora', serif;
+  margin: 0;
+  color: #2c2825;
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+header p {
+  margin: 0.5rem 0 1.5rem;
+  color: #7d736c;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+header nav a {
+  margin: 0 18px;
+  text-decoration: none;
+  color: #5a524c;
+  font-weight: 700;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #8a6d4c; /* A warm brown accent */
+  transition: width 0.3s ease;
+}
+
+header nav a:hover {
+  color: #8a6d4c;
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+/* --- Main Page Layout (Grid) --- */
+.page-container {
+  display: grid;
+  grid-template-columns: 3fr 1.1fr; /* Give cart a bit more space */
+  gap: 45px;
+  padding: 45px 5%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* --- Books Grid --- */
+.books-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 35px;
+}
+
+.book-item {
+  background: #ffffff;
+  border: 1px solid #edebe8;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  text-align: left; /* Align text to the left for a classic book list feel */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
+}
+
+.book-thumbnail {
+  width: 100%;
+  height: 240px;
+  object-fit: cover; /* Use cover to fill the space */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Container for text content inside the card */
+.book-item > div {
+  padding: 0 20px;
+}
+
+.book-title {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #3a3430;
+  flex-grow: 1;
+  margin: 15px 0 8px 0;
+}
+
+.book-author {
+  font-size: 0.9rem;
+  color: #8a7e76;
+  margin-bottom: 15px;
+}
+
+.book-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #9d3e3e; /* A muted red for price */
+  text-align: right;
+  margin: 0 0 20px 0;
+  padding: 0 20px;
+}
+
+/* --- Buttons --- */
+.add-cart-btn, .clear-cart-btn {
+  background-color: #7d6249; /* A classic, warm brown */
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: calc(100% - 40px);
+  margin: 0 auto 20px auto;
+  letter-spacing: 0.5px;
+}
+
+.add-cart-btn:hover {
+  background-color: #644f3b;
+  transform: scale(1.03);
+}
+
+/* --- Shopping Cart --- */
+.cart-container {
+  background-color: #fffdf9;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #e9e5e0;
+  position: sticky;
+  top: 40px;
+  height: fit-content;
+}
+
+.cart-title {
+  font-family: 'Lora', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #4a4036;
+  border-bottom: 1px solid #e0ddd7;
+  padding-bottom: 15px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f4f1ed;
+  font-size: 0.95rem;
+}
+
+.book-title-cart {
+  flex: 1;
+  padding-right: 15px;
+  color: #5c554e;
+  line-height: 1.4;
+}
+
+.book-price-cart {
+  font-weight: 700;
+  color: #333;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 30px;
+  color: #4a7c59; /* Green for total */
+}
+
+.clear-cart-btn {
+  background-color: #a85c5c;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.clear-cart-btn:hover {
+  background-color: #8c4c4c;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+  .page-container {
+    grid-template-columns: 1fr; /* Single column for tablets and below */
+  }
+  .cart-container {
+    position: static;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    padding: 1.5rem 5%;
+  }
+  header h1 {
+    font-size: 2.2rem;
+  }
+  header nav {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  .books-container {
+    grid-template-columns: 1fr; /* Single column for books on small screens */
+  }
+}
